@@ -1,15 +1,57 @@
+（一）Git 一般使用流程
 初始化工作
-
-在原有项目的目录下初始化 git 仓库
-git init
-将所有文件的修改添加到暂存区
-git add .
-提交版本
-git commit -m "init project"
-在托管网站上新建仓库
-
-将托管网站的仓库地址设置为远程主机
-
-git remote add origin https://github.com/HAo99/demo.git
-推送本地仓库到远程
-git push -u origin master
+1.在原有项目的目录下初始化 git 仓库  git init
+2.将所有文件的修改添加到暂存区  git add .
+3.提交版本  git commit -m "init project"
+4.在托管网站上新建仓库
+5.将托管网站的仓库地址设置为远程主机 
+  git remote add origin https://github.com/HAo99/demo.git
+6.推送本地仓库到远程  git push -u origin master
+(二)命令大全
+ (1）常用命令
+1.添加文件修改至暂存区 git add .
+2.提交版本  git commit -m "备注内容"
+3.查看git仓库目前状态  git status
+4.查看版本日志
+  git log
+  git log --pretty=oneline
+  git log --graph
+5.版本回退
+  git reset --hard (commit id 或者 用 HEAD 表示)
+  # 示例：
+  git reset --hard 10acb
+6.命令历史  git reflog
+ (2)代码托管相关
+1.添加远程仓库主机
+  git remote add (主机名称) (主机地址)
+  # 示例：
+  git remote add origin https://git.hao99.club/lwh/demo.git
+2.查看已设置的远程主机  git remote -v
+3.删除已设置的远程主机
+  git remote remove (主机名称)
+  # 简写
+  git remote rm (主机名称)
+  # 示例
+  git remote rm origin
+4.将本地版本仓库推送到远程仓库
+  git push origin master
+  git push -u (主机名称) (分支名称)
+  # 示例
+  git push -u origin master
+5.将远程仓库克隆到本地
+  git clone (仓库地址)
+  # 示例
+  git clone https://git.hao99.club/lwh/demo.git
+6.将远程仓库的更新拉取到本地  git pull
+ (3)多人协作相关
+1.查看分支  git branch
+  查看远程和本地所有分支  git branch -a
+2.新建分支  git branch (分支名称)
+3.切换分支  git checkout (分支名称)
+4.新建并切换到该分支  git checkout -b (分支名)
+5.删除本地分支  git branch -D (分支名)
+6.删除远程 分支 
+git push (主机名) --delete (分支名)
+# 示例
+git push origin --delete dev
+7.合并分支 git merge (目标分支名称)
