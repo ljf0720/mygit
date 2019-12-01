@@ -1,0 +1,15 @@
+初始化工作
+
+在原有项目的目录下初始化 git 仓库
+git init
+将所有文件的修改添加到暂存区
+git add .
+提交版本
+git commit -m "init project"
+在托管网站上新建仓库
+
+将托管网站的仓库地址设置为远程主机
+
+git remote add origin https://github.com/HAo99/demo.git
+推送本地仓库到远程
+git push -u origin master
